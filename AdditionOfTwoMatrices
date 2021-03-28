@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <conio.h>
+void read_arr(int a[10][10], int row, int col)
+{
+    int i, j;
+    for (i = 0; i < row; i++)
+    {
+        for (j = 0; j < col; j++)
+        {
+            printf("Enter the element of matrix [%d][%d] : ", i+1, j+1);
+            scanf("%d", &a[i][j]);
+        }
+    }
+}
+void sum_arr(int m1[10][10], int m2[10][10], int sum[20][20], int row, int col)
+{
+    int i, j;
+    for (i = 0; i < row; i++)
+    {
+        printf("\n");
+        for (j = 0; j < col; j++)
+        {
+            sum[i][j] = (m1[i][j] + m2[i][j]);
+            printf("%d \t", sum[i][j]);
+        }
+    }
+}
+int main()
+{
+    int m1[5][5], m2[5][5], sum[10][10], row, col;
+    printf("Enter number of rows and columns respectively:\n");
+    scanf("%d %d", &row, &col);
+    printf("\n Enter the first matrix \n");
+    read_arr(m1, row, col);
+    printf("Enter the second matrix \n");
+    read_arr(m2, row, col);
+    sum_arr(m1, m2, sum, row, col);
+    printf(" is the sum of the 2 matrices \n");
+    return 0;
+}
